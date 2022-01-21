@@ -1,0 +1,671 @@
+/*
+@font-face {
+  font-family: 'Didot';
+  src: url(fonts/Didot-Regular.ttf);
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Didot';
+  src: url(fonts/Didot-Medium.ttf);
+  font-weight: 600;
+}*/
+
+@font-face {
+  font-family: 'Didot';
+  src: url(fonts/Didot/Didot-HTF-L06-Light.ttf);
+  font-weight: 300;
+}
+@font-face {
+  font-family: 'Didot';
+  src: url(fonts/Didot/Didot-HTF-B64-Bold.ttf);
+  font-weight: 600;
+}
+@font-face {
+  font-family: 'SFPro';
+  src: url(fonts/SF-Pro/SF-Pro-Display-Regular.otf);
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'SFPro';
+  src: url(fonts/SF-Pro/SF-Pro-Display-Bold.otf);
+  font-weight: 700;
+}
+@font-face {
+  font-family: 'SFPro';
+  src: url(fonts/SF-Pro/SF-Pro-Display-Medium.otf);
+  font-weight: 500;
+}
+
+$light_bg : #f7f7f7;
+$yellow: #efc61e;
+$pink: #ef476f;
+$white: #fff;
+$green_gradient: linear-gradient(180deg , #06d6a0, #15a278);
+$blue_gradient: linear-gradient(180deg , #067bd6, #095b9b);
+$pink_gradient: linear-gradient(180deg , #ef476f, #d14264);
+
+
+html {
+  font-size: .828vw;
+}
+
+body{
+  font-family: 'SFPro';
+  font-weight: 400;
+  font-size: 1.25rem;
+  line-height: 1.4;
+  color:#000;
+}
+
+.h1, h1 {
+  font-size: 3.125rem;
+  font-weight: 700;
+}
+
+.container-fluid {
+    max-width: 90%;
+  }
+
+  .logo {
+    font-size: 2.375rem;
+    letter-spacing: -0.114rem;
+    font-weight: 200;
+    display: inline-block;
+
+    strong{
+      color: $yellow; 
+      font-weight: 700;
+    }
+
+    &.footer_logo{
+
+      margin-bottom: 6.25rem;
+
+      strong{
+        color: $pink; 
+      }
+    }
+}
+
+
+.main_header{
+      
+    padding: 1.25rem 0;
+    background: #000;
+    color: #fff;
+
+    .list-inline-item {
+        margin-left: 5rem;
+
+        a{
+            color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+        }
+      }
+}
+
+
+
+.main_footer {
+  background: #f7f7f7;
+  padding: 4.25rem 0 1rem;
+
+  .col-5 {
+    display: none;
+}
+
+  a, p {
+    color: #000;
+    font-size: 1.875rem;
+    font-weight: 500;
+}
+
+  .widget_title {
+    color: #b3b4b5;
+    margin-bottom: 1.25rem;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  .menu {
+    padding-left: 0;
+    list-style: none;
+
+    a{
+        color: #fff;
+        font-size: 1.125rem;
+        margin-bottom: 0.85rem;
+        display: block;
+        text-decoration: none;
+    }
+  }
+
+  .copyright {
+    border-top: 1px solid #c3c3c3;
+    padding-top: 1.5rem;
+    margin-top: 12rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .footer-menu {
+      
+    li {
+    list-style: none;
+}
+}
+
+  .social_menu {
+
+    li{
+
+      a {
+        font-size: 2rem;
+        margin-right: 2rem;
+        color: #000;
+    
+      }
+
+      &:last-of-type a{
+        margin-right: 0;
+      }
+    }
+      
+}
+}
+
+.btn {
+    padding: 0.65rem 2rem;
+    background: #fff;
+    border-radius: 2rem;
+    font-weight: 600;
+    font-size: 1.25rem;
+}
+
+.offer-ticker {
+  position: absolute;
+  right: 0;
+  background: #fff;
+  color: #000;
+  padding: 1.35rem 2rem;
+  border-top-left-radius: 2rem;
+  border-bottom-left-radius: 2rem;
+  line-height: 1.1;
+ 
+  span {
+  display: block;
+  font-size: 1.688rem;
+  font-weight: 700;
+}
+}
+
+.booking-wrapper {
+    background: #000 url(./images/banner-img.svg);
+    color: $white;
+    padding: 1.5rem 0 5rem;
+    background-repeat: no-repeat;
+    background-position: 95% 90%;
+    background-size: 21rem;
+
+    .booking-box {
+        max-width: 84%;
+        background: #2f2f2f;
+        border-radius: 1.5rem;
+        height: 80vh;
+        overflow: hidden;
+
+        .box-header {
+            padding: 6rem 5rem 2.5rem 2.5rem;
+            background: #222222;
+
+            h1{
+              font-weight: 700;
+            }
+        }
+
+        .box-body {
+            padding: 2.5rem 2.5rem 5rem 2.5rem; 
+        }
+        .input-box {
+            position: relative;
+            
+            input {
+            background: #222222;
+            box-shadow: none;
+            outline: none;
+            border: none;
+            width: 100%;
+            height: 4rem;
+            border-radius: 2rem;
+            padding: 1rem 2.5rem;
+            color: #fff;
+            font-weight: 500;
+        }
+        svg {
+            position: absolute;
+            right: 2rem;
+            top: 50%;
+            max-width: 1.9rem;
+            color: #8f8f8f;
+            transform: translateY(-50%);
+        }
+    }
+    }
+
+    .intro_text{
+
+      margin-top: -5rem;
+
+        .sub_title{
+            color: $yellow;
+            max-width: 70%;
+        }
+        .title{
+            font-size: 8.438rem;
+            font-family: 'Didot';
+            margin: .75rem 0 2.5rem;
+            font-weight: 300;
+        }
+        p{
+            margin-bottom: 2.5rem;
+            max-width: 450px;
+        }
+    }
+}
+ 
+
+.section_title{
+  margin-bottom: 7rem;
+}
+
+.feature_box{
+  margin-bottom: 4rem;
+  
+  .inner {
+  max-width: 430px;
+
+  img{
+    max-height: 22rem;
+    max-width: 100%;
+  }
+
+  .title {
+    font-weight: 700;
+    margin: 3rem 0;
+}
+}
+}
+
+.features_wrapper {
+  padding: 10rem 0 5rem;
+
+  .feature_box:nth-of-type(2) .inner{
+    margin: 0 auto;
+  }
+  .feature_box:nth-of-type(3) .inner{
+    margin-left: auto;
+  }
+}
+
+
+.single_reviews{
+
+  display: flex;
+
+ .inner {
+  border-radius: 1.5rem;
+  padding: 7rem 5rem 15rem;
+  color:#fff;
+
+
+  .person_name {
+    font-size: 1.875rem;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+.stars {
+  margin: 1rem 0 4rem;
+  font-size: 2.188rem;
+
+  span{
+    margin-right: .5rem;
+  }
+}
+.review-content {
+  font-size: 3.125rem;
+  margin-bottom: 8rem;
+  line-height: 1.2;
+}
+img {
+  position: absolute;
+  bottom: 4rem;
+  opacity: .5;
+  max-width: 10rem;
+}
+ }
+  &:nth-last-of-type(2) .inner{
+    background: $green_gradient;
+  }
+  &:nth-last-of-type(1) .inner{
+    background: $blue_gradient;
+  }
+}
+
+.cta_wrapper {
+  padding: 12rem 0;
+}
+.cta{
+  background: $pink_gradient;
+  color: #fff;
+  padding: 8rem;
+  border-radius: 1.875rem;
+
+  .btn {
+    padding: 0.75rem 3rem;
+    border-radius: 0.75rem;
+}
+  
+  .section_title{
+    font-size: 8.125rem;
+    line-height: 1;
+    font-weight: 700;
+    margin-bottom: 12rem;
+  }
+}
+
+.menu_open, .menu_close {
+  display: none;
+}
+
+
+@media only screen and (min-width: 768px) and (max-width:1024px){
+  html{
+    font-size: 1.5vw;
+  }
+  body , .btn{
+    font-size: 1.5rem;
+}
+.cta{
+  .section_title {
+    font-size: 6rem;
+}
+  
+  .btn {
+  border-radius: 1.5rem;
+}
+}
+  .container-fluid {
+    max-width: 95%;
+}
+.feature_box .inner img {
+  max-height: 12rem;
+}
+.booking-wrapper {
+  background-position: 95% 29%;
+  padding-top: 3rem;
+}
+.single_reviews {
+  
+  .inner {
+  padding: 4rem 2rem 12rem;
+
+  .review-content {
+    font-size: 2rem;
+    margin-bottom: 8rem;
+    line-height: 1.2;
+  }
+  img {
+    max-width: 8rem;
+  }
+}
+}
+.cta {
+  padding: 5rem;
+}
+.booking-wrapper {
+  
+  .row {
+  flex-direction: column-reverse;
+}
+.intro_text {
+  margin: 1rem 0 4rem;
+}
+ .booking-box {
+  max-width: 80%;
+  height: 60vh;
+}
+}
+}
+
+
+
+@media only screen and (max-width:767px){
+  html{
+    font-size: initial;
+  }
+  body {
+    font-size: 1.11rem;
+}
+  .container-fluid {
+    max-width: 95%;
+}
+
+.menu_open{
+  display: inline-block;
+  font-size: 1.5rem;
+  margin-left: -5px;
+  margin-right: 1.5rem;
+  position: relative;
+  top: -0.1rem;
+}
+
+.menu_close {
+  position: absolute;
+  color: #fff;
+  display: inline-block;
+  right: 25px;
+  top: 15px;
+  font-size: 2rem;
+}
+
+.logo {
+  max-width: 56vw;
+}
+
+.offcanvas_menu {
+
+  > div{
+  position: fixed;
+  width: 75%;
+  height: 100%;
+  top: 0;
+  background: #000;
+  z-index: 1;
+  padding: 17% 7% 5% !important;
+  left: 0;
+  text-align: left !important;
+  transform: translateX(-100%);
+  transition: transform 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+
+  &.active{
+    transform: translateX(0%);
+  }
+
+  ul{
+      padding-left: 0;
+  .list-inline-item{
+    margin-left: 0;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+}
+}
+
+
+  .section_title {
+    font-size: 30px;
+    margin-bottom: 3rem;
+}
+.features_wrapper {
+  padding: 7.5rem 0 4rem;
+}
+.feature_box {
+  margin-bottom: 3rem;
+
+  .inner .title {
+    margin-bottom: 2rem;
+}
+}
+.single_reviews{
+  margin-bottom: 2rem;
+  
+  .inner {
+  padding: 40px;
+
+  .person_name{
+    font-size: 1.18rem;
+  }
+  .review-content{
+    font-size: 1.11rem;
+    margin-bottom: 5rem;
+  }
+  .stars {
+    margin-bottom: 1rem;
+    margin-top: 0;
+    font-size: 1.11rem;
+    
+    span {
+      margin-right: 0.25rem;
+  }
+}
+img {
+  max-width: 40px;
+  bottom: 2rem;
+  margin-left:-10px;
+}
+}
+}
+
+.cta_wrapper{
+   padding: 0 16px 180px;
+}
+
+.cta {
+  padding: 100px 24px;
+  border-radius: 15px;
+
+  .section_title {
+    font-size: 50px;
+    margin-bottom: 300px;
+}
+.cta .btn {
+  padding: 0.75rem 2rem;
+}
+}
+.main_footer {
+  padding: 2rem 0 1rem;
+
+   .col-5 {
+    display: block;
+}
+
+  a, p {
+    font-size: 1rem;
+}
+ .widget_title {
+  margin-bottom: 1rem;
+}
+[class*="col"] {
+  margin-bottom: 20px;
+}
+  .footer_logo {
+    margin-bottom: 3.25rem;
+}
+ .col-6:nth-child(2) {
+  padding-left: 0;
+}
+.copyright{
+  margin-top: 3rem;
+  .social_menu{
+       display: none;
+  }
+}
+}
+
+.btn {
+  padding: 0.35rem 1.5rem;
+  font-size: 1.11rem;
+}
+
+.offer-ticker {
+  padding: 1rem 0.65rem 1rem 1.25rem;
+  margin-top: -10px;
+  font-size: 1rem;
+  span {
+  font-size: 1.35rem;
+}
+}
+
+.booking-wrapper {
+
+  padding: 0.5rem 0 8rem;
+  background-position: 90% 34%;
+  background-size: 12rem;
+
+  .intro_text {
+    margin-top: 0rem; 
+}
+
+  .row {
+    flex-direction: column-reverse;
+  }
+  
+  .intro_text{ 
+    
+  .title {
+  font-size: 50px;
+  margin: 1.5rem 0;
+}
+.sub_title {
+  max-width: 70%;
+  font-size: 30px;
+
+  br{
+    display: none;
+  }
+}
+  }
+   .booking-box{
+     margin-top: 110px;
+     max-width: 100%;
+
+     .box-body {
+      padding: 20px 10px;
+  }
+  .input-box{
+    
+    svg{
+      right: 1.5rem;
+     }
+
+    input{
+    height: 60px;
+    border-radius: 1.5rem;
+    padding: 0.75rem 4.5rem 0.75rem 1.25rem;
+    font-weight: 400;
+  }
+}
+
+     .box-header{
+      padding: 3rem 2rem 1.05rem 1.5rem;
+
+      h1{
+        font-size: 30px;
+      }
+     }
+   }
+}
+}
