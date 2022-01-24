@@ -4,22 +4,22 @@ import Card from './Card';
 import Reviews from './Reviews';
 import ReviewsData from './ReviewsData';
 import Banner_img1 from '../images/banner-img.svg';
-// import Search from './Search';
 import Banner_img2 from '../images/folded-clothes.svg';
 import Banner_img3 from '../images/plant2.svg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Calendar from 'react-calendar';
+import Testing from './Test';
 import 'react-calendar/dist/Calendar.css';
+import BookingForm from './BookingForm';
 import { $ }  from 'react-jquery-plugin';
 
 
 
-function Home(props) {
+function Home(val) {
     const [date, setDate] = useState(new Date());
     const [time, setTime] = useState("hello");
     var month = date.toLocaleString('default', { month: 'short' });
     var day = date.getUTCDate() + 1;
-    var year = date.getUTCFullYear();
 
    // console.log(`${month}: ${day}`);
     function Search() {
@@ -40,7 +40,7 @@ function Home(props) {
      $(document).on('click', '.times_options2 input[type="radio"]', function(){
          var radio_value = $(this).val();
         // alert(radio_value);
-        $('.selectedTime').text(radio_value);; 
+        $('.selectedTime').text(radio_value); 
      });
         $(document).on('submit', '.search_form', function(){
        $('.box1').hide();
@@ -49,6 +49,7 @@ function Home(props) {
      });
 
      $(document).on('click', '.react-calendar__tile', function(){
+         $('.selected-location').addClass('active');
         $('.box3').show();
      });
 
@@ -94,7 +95,7 @@ function Home(props) {
                     </div>
                     <div className="calendar_wrapper booking-box box2">
                         <div className="box-header">
-                            <div className="selected-location mb-4"><div>Toronto Western Hospital <br/><span className='selected'>{`${month}: ${day}`}</span></div></div>
+                            <div className="selected-location mb-3"><div>Toronto Western Hospital <br/><span className='selected'>{`${month}: ${day}`}</span></div></div>
                             <h1><span className='selectedTime'>Select the dates</span></h1>
                         </div>
                         <div className="box-body">
@@ -125,9 +126,8 @@ function Home(props) {
                                     <li className='list-inline-item'><label><input type="radio" name="times2" value={'8:00 AM'} /><span >8:00 AM</span></label></li>
                                     <li className='list-inline-item'><label><input type="radio" name="times2" value={'11:30 AM'} /><span>11:30 AM</span></label></li>
                                 </ul>
-                               {/* <Demo /> */}
-                               <h1 className='mt-5'>Contact Details</h1>
-                               
+                               <h1 className='mt-4 heading'>Contact Details</h1>
+                               <BookingForm />
                                </div>
                            </div>
                            <div className="col-md-3 px-0 offset-md-1 text-center d-flex align-items-between flex-column justify-content-between">
@@ -156,6 +156,7 @@ function Home(props) {
        </div>
        
        <div className="features_wrapper">
+
            <div className="container-fluid">
        <h1 class="section_title">One stop for all your laundry needs</h1>
         <div className="row">

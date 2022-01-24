@@ -53,7 +53,7 @@ body {
 }
 
 .h1, h1 {
-  font-size: 3.125rem;
+  font-size: 2.75rem;
   font-weight: 700;
 }
 
@@ -187,9 +187,9 @@ button, input, optgroup, select, textarea {
 .booking-wrapper {
   background: #000 url(./images/banner-img.svg);
   color: #fff;
-  padding: 1.5rem 0 5rem;
+  padding: 0.5rem 0 4rem;
   background-repeat: no-repeat;
-  background-position: 93% 90%;
+  background-position: 93% 87%;
   background-size: 21rem;
 }
 
@@ -212,12 +212,13 @@ button, input, optgroup, select, textarea {
 .booking-wrapper .booking-box {
   background: #2f2f2f;
   border-radius: 1.5rem;
-  height: 105vh;
-  overflow: hidden;
+  height: 85vh;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .booking-wrapper .booking-box.calendar_wrapper .box-header {
-  padding-top: 3rem;
+  padding-top: 3vh;
 }
 
 .booking-wrapper .booking-box.calendar_wrapper .box-header .selected-location {
@@ -249,11 +250,15 @@ button, input, optgroup, select, textarea {
 
 .booking-wrapper .booking-box.calendar_wrapper .box-header .selected-location .selected {
   padding-left: 1rem;
-  display: block;
+  display: none;
   margin-top: .5rem;
 }
 
-.booking-wrapper .booking-box.calendar_wrapper .box-header .selected-location > div:before {
+.booking-wrapper .booking-box.calendar_wrapper .box-header .selected-location.active .selected {
+  display: block;
+}
+
+.booking-wrapper .booking-box.calendar_wrapper .box-header .selected-location.active > div:before {
   position: absolute;
   content: "";
   width: 2rem;
@@ -263,7 +268,7 @@ button, input, optgroup, select, textarea {
   left: 0.65rem;
 }
 
-.booking-wrapper .booking-box.calendar_wrapper .box-header .selected-location > div:after {
+.booking-wrapper .booking-box.calendar_wrapper .box-header .selected-location.active > div:after {
   position: absolute;
   content: "";
   width: 2px;
@@ -275,8 +280,8 @@ button, input, optgroup, select, textarea {
 
 .booking-wrapper .booking-box.calendar_wrapper .times_options {
   border-bottom: 2px solid #707070;
-  padding-bottom: 1.5rem;
-  margin: 1rem 0 2.5rem;
+  padding-bottom: 1vh;
+  margin: 1vh 0 2.5vh;
 }
 
 .booking-wrapper .booking-box.calendar_wrapper .times_options input {
@@ -290,6 +295,7 @@ button, input, optgroup, select, textarea {
   text-align: center;
   line-height: 2.35rem;
   border-radius: 50%;
+  color: #979797;
 }
 
 .booking-wrapper .booking-box.calendar_wrapper .times_options input:checked + span {
@@ -340,7 +346,7 @@ button, input, optgroup, select, textarea {
   border: none;
   width: 100%;
   border-radius: 1.11rem;
-  padding: 2rem 1rem;
+  padding: 1.5vh .5vw;
   margin-top: 2.5rem;
 }
 
@@ -353,12 +359,18 @@ button, input, optgroup, select, textarea {
 
 .booking-wrapper .booking-box.calendar_wrapper .react-calendar .react-calendar__month-view__weekdays abbr {
   color: #fff;
-  width: 1.25rem;
+  width: 2.2rem;
+  height: 2.2rem;
   overflow: hidden;
   display: inline-block;
   letter-spacing: 5rem;
   text-decoration: none;
   font-size: 1.25rem;
+  padding-left: 0.65rem;
+}
+
+.booking-wrapper .booking-box.calendar_wrapper .react-calendar .react-calendar__month-view__weekdays__weekday {
+  padding: 0;
 }
 
 .booking-wrapper .booking-box.calendar_wrapper .react-calendar .react-calendar__month-view__days__day--weekend, .booking-wrapper .booking-box.calendar_wrapper .react-calendar .react-calendar__month-view__days__day {
@@ -378,7 +390,7 @@ button, input, optgroup, select, textarea {
   height: 2.5rem;
   display: inline-block;
   text-align: center;
-  line-height: 2.65rem;
+  line-height: 2.5rem;
   border-radius: 50%;
 }
 
@@ -388,16 +400,17 @@ button, input, optgroup, select, textarea {
 }
 
 .booking-wrapper .booking-box .box-header {
-  padding: 6rem 5rem 2.5rem 2.5rem;
+  padding: 6vh 5rem 3vh 2.5rem;
   background: #222222;
 }
 
 .booking-wrapper .booking-box .box-header h1 {
   font-weight: 700;
+  margin-bottom: 0;
 }
 
 .booking-wrapper .booking-box .box-body {
-  padding: 2.5rem 2.5rem 3rem 2.5rem;
+  padding: 2.5vh 2.5rem 3vh 2.5rem;
 }
 
 .booking-wrapper .booking-box .input-box {
@@ -495,7 +508,7 @@ button, input, optgroup, select, textarea {
 .booking-wrapper .booking_form > .wrapper .times_options2 li span {
   display: block;
   text-align: center;
-  padding: 1.15rem;
+  padding: 0.75rem 1.15rem;
   border-radius: 1.11rem;
   font-weight: 700;
 }
@@ -507,6 +520,10 @@ button, input, optgroup, select, textarea {
 .booking-wrapper .booking_form > .wrapper .times_options2 li input[type="radio"]:checked + span {
   background: #fff;
   color: #000;
+}
+
+.booking-wrapper .box3 img {
+  max-height: 25vh;
 }
 
 .section_title {
@@ -564,6 +581,8 @@ button, input, optgroup, select, textarea {
 .single_reviews .inner .stars {
   margin: 1rem 0 4rem;
   font-size: 2.188rem;
+  display: inline-block;
+  position: relative;
 }
 
 .single_reviews .inner .stars span {
@@ -617,8 +636,38 @@ button, input, optgroup, select, textarea {
   margin-bottom: 12rem;
 }
 
-.menu_open, .menu_close {
+.menu_open, .menu_close, .mobile_phone {
   display: none;
+}
+
+/* Booking form */
+.bookingForm label {
+  width: 100%;
+  padding-left: .75rem;
+}
+
+.bookingForm input, .bookingForm textarea {
+  height: 3.25rem;
+  width: 100%;
+  border-radius: 1.125rem;
+  border: none;
+  background: #222222;
+  padding-left: 1.5rem;
+  outline: none;
+  color: #fff;
+}
+
+.bookingForm textarea {
+  height: 8rem;
+  padding-top: 1rem;
+  outline: none;
+  color: #fff;
+}
+
+@media only screen and (min-width: 1024px) and (max-height: 700px) {
+  .bookingForm textarea {
+    height: 6rem;
+  }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
@@ -683,6 +732,26 @@ button, input, optgroup, select, textarea {
   .container-fluid {
     max-width: 95%;
   }
+  .main_header {
+    padding-bottom: 1rem;
+  }
+  .mobile_phone {
+    float: right;
+    background: #fff;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    color: black;
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+    text-align: center;
+    position: relative;
+    top: .5rem;
+    margin-right: -.5rem;
+  }
+  .mobile_phone svg {
+    vertical-align: bottom;
+  }
   .menu_open {
     display: inline-block;
     font-size: 1.5rem;
@@ -702,18 +771,21 @@ button, input, optgroup, select, textarea {
   .logo {
     max-width: 56vw;
   }
+  .mobile_phone {
+    display: inline-block;
+  }
   .offcanvas_menu > div {
     position: fixed;
     width: 75%;
     height: 100%;
     top: 0;
     background: #000;
-    z-index: 1;
+    z-index: 11;
     padding: 17% 7% 5% !important;
     left: 0;
     text-align: left !important;
-    -webkit-transform: translateX(-100%);
-            transform: translateX(-100%);
+    -webkit-transform: translateX(-105%);
+            transform: translateX(-105%);
     -webkit-transition: -webkit-transform 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
     transition: -webkit-transform 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
     transition: transform 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
@@ -740,6 +812,14 @@ button, input, optgroup, select, textarea {
   }
   .feature_box {
     margin-bottom: 3rem;
+  }
+  .feature_box .inner {
+    max-width: 100%;
+    margin-left: 0 !important;
+  }
+  .feature_box .inner img {
+    margin: 0 auto;
+    display: block;
   }
   .feature_box .inner .title {
     margin-bottom: 2rem;
@@ -817,25 +897,63 @@ button, input, optgroup, select, textarea {
   }
   .offer-ticker {
     padding: 1rem 0.65rem 1rem 1.25rem;
-    margin-top: -10px;
+    margin-top: -5px;
     font-size: 1rem;
   }
   .offer-ticker span {
     font-size: 1.35rem;
   }
   .booking-wrapper {
-    padding: 0.5rem 0 8rem;
-    background-position: 90% 34%;
-    background-size: 12rem;
+    padding: 0 0 8rem;
+    background-image: none;
   }
-  .booking-wrapper .intro_text {
-    margin-top: 0rem;
-  }
-  .booking-wrapper .row {
+  .booking-wrapper > div > .row {
     -webkit-box-orient: vertical;
     -webkit-box-direction: reverse;
         -ms-flex-direction: column-reverse;
             flex-direction: column-reverse;
+  }
+  .booking-wrapper .calendar_wrapper .calendar-container {
+    padding-bottom: 30px;
+  }
+  .booking-wrapper .calendar_wrapper .box-body {
+    opacity: 1;
+  }
+  .booking-wrapper .calendar_wrapper .box-body > p {
+    padding-left: .75rem;
+  }
+  .booking-wrapper .calendar_wrapper .times_options {
+    overflow-x: auto;
+    padding-bottom: 1rem !important;
+    margin-bottom: 1.5rem !important;
+  }
+  .booking-wrapper .calendar_wrapper .times_options li {
+    margin-right: 0;
+  }
+  .booking-wrapper .calendar_wrapper .react-calendar__viewContainer {
+    padding: 8px 11px !important;
+  }
+  .booking-wrapper .calendar_wrapper .react-calendar abbr {
+    width: 2rem !important;
+    height: 2rem !important;
+    line-height: 2rem !important;
+  }
+  .booking-wrapper .calendar_wrapper .selected-location.active > div:before, .booking-wrapper .calendar_wrapper .selected-location.active > div:after {
+    bottom: 0.5rem !important;
+    left: 0.55rem !important;
+  }
+  .booking-wrapper .inner {
+    max-width: 100%;
+  }
+  .booking-wrapper .pos_unset {
+    padding: 0 .35rem;
+    position: relative;
+  }
+  .booking-wrapper .intro_text {
+    margin-top: 0rem;
+    padding-bottom: 110px;
+    background: url(./images/banner-img.svg) 95% 90% no-repeat;
+    background-size: 55%;
   }
   .booking-wrapper .intro_text .title {
     font-size: 50px;
@@ -849,8 +967,11 @@ button, input, optgroup, select, textarea {
     display: none;
   }
   .booking-wrapper .booking-box {
-    margin-top: 110px;
     max-width: 100%;
+    height: auto;
+  }
+  .booking-wrapper .booking-box.box1 {
+    height: 40rem;
   }
   .booking-wrapper .booking-box .box-body {
     padding: 20px 10px;
@@ -865,10 +986,82 @@ button, input, optgroup, select, textarea {
     font-weight: 400;
   }
   .booking-wrapper .booking-box .box-header {
-    padding: 3rem 2rem 1.05rem 1.5rem;
+    padding: 2rem 2rem 1.05rem 1.5rem !important;
   }
   .booking-wrapper .booking-box .box-header h1 {
     font-size: 30px;
+  }
+  .booking-wrapper .booking-box .box-header .selected-location {
+    font-size: 1.275rem !important;
+  }
+  .booking-wrapper .booking-box .box-header .selected-location:after, .booking-wrapper .booking-box .box-header .selected-location::before {
+    top: 0.25rem !important;
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8);
+  }
+  .booking-wrapper .booking_form {
+    width: 100%;
+    margin-top: -556px;
+    position: relative;
+    border-bottom-left-radius: 1.875rem;
+  }
+  .booking-wrapper .booking_form .img2 {
+    display: none;
+  }
+  .booking-wrapper .booking_form input, .booking-wrapper .booking_form textarea {
+    height: 2.75rem;
+    border-radius: 0.75rem;
+    padding-left: 1.25rem;
+  }
+  .booking-wrapper .booking_form textarea {
+    height: 8.25rem;
+  }
+  .booking-wrapper .booking_form .heading {
+    font-size: 14px;
+    color: #7d7d7d;
+    text-transform: uppercase;
+    margin: 20px 0 0 !important;
+  }
+  .booking-wrapper .booking_form .bookingForm {
+    margin-top: 20px !important;
+  }
+  .booking-wrapper .booking_form .bookingForm .send {
+    position: relative;
+    top: 150px;
+    border-radius: 0.75rem;
+    height: 2.875rem;
+  }
+  .booking-wrapper .booking_form .wrapper {
+    padding: 1rem 0 !important;
+    margin: 0;
+    height: auto;
+  }
+  .booking-wrapper .booking_form .times_options2 li span {
+    padding: 0.65rem 1.15rem !important;
+  }
+  .booking-wrapper .booking_form .Pricing {
+    font-size: 2.438rem;
+  }
+  .booking-wrapper .d-flex.flex-column {
+    -webkit-box-orient: horizontal !important;
+    -webkit-box-direction: normal !important;
+        -ms-flex-direction: row !important;
+            flex-direction: row !important;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    position: relative;
+    top: -65px;
+  }
+  .booking-wrapper .d-flex.flex-column > div {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 50%;
+            flex: 0 0 50%;
+    max-width: 50%;
+    text-align: left;
+  }
+  .booking-wrapper .d-flex.flex-column > div img {
+    max-width: 40vw;
   }
 }
 /*# sourceMappingURL=main.css.map */

@@ -8,11 +8,11 @@ function Reviews(props) {
           <div className="inner">
               <h3 className="person_name">{props.person_name}</h3>
               <div className="stars" data-count={props.rating}>
-                 <span><FontAwesomeIcon icon={['far', 'star']}/></span>
-                 <span><FontAwesomeIcon icon={['far', 'star']}/></span>
-                 <span><FontAwesomeIcon icon={['far', 'star']}/></span>
-                 <span><FontAwesomeIcon icon={['far', 'star']}/></span>
-                 <span><FontAwesomeIcon icon={['far', 'star']}/></span>
+                 <span><FontAwesomeIcon icon={['fas', 'star']}/></span>
+                 <span><FontAwesomeIcon icon={['fas', 'star']}/></span>
+                 <span><FontAwesomeIcon icon={['fas', 'star']}/></span>
+                 <span><FontAwesomeIcon icon={['fas', 'star']}/></span>
+                 <span><FontAwesomeIcon icon={['fas', 'star']}/></span>
                  <div className="rating_progress"></div>
               </div>
               <div className="review-content">

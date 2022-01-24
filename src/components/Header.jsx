@@ -15,6 +15,7 @@ function Header() {
           <div className="col-md-3">
           <span onClick={ToggleClass} className="menu_open"><FontAwesomeIcon icon={['fas', 'bars']} /></span>
           <h2 className="logo"><img src={Dark_logo} alt="" className="img-fluid"/></h2>
+          <span className="mobile_phone"><FontAwesomeIcon icon={['fas', 'phone']} /></span>
           </div>
           <div className="col-md-9 text-right offcanvas_menu">
             <div className={ isActive ? null : "active"}>
