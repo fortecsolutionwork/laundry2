@@ -18,13 +18,14 @@ function Header() {
           <span className="mobile_phone"><FontAwesomeIcon icon={['fas', 'phone']} /></span>
           </div>
           <div className="col-md-9 text-right offcanvas_menu">
-            <div className={ isActive ? null : "active"}>
+            <div className={`slide ${isActive ? "" : "active"}`}>
             <span onClick={ToggleClass} className="menu_close"><FontAwesomeIcon icon={['fas', 'times']} /></span>
             <ul className="list-inline">
                 <li className="list-inline-item active"><a href="#">How it works</a></li>
                 <li className="list-inline-item"><a href="#">FAQ</a></li>
                 <li className="list-inline-item"><a href="#">(416)984-4659</a></li>
             </ul>
+            
             </div>
           </div>
         </div>

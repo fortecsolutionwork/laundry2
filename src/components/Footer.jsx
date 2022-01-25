@@ -1,7 +1,17 @@
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useState } from 'react';
 import Light_logo from '../images/logo-light-bg.svg';
 
 function Footer() {
+   
+  const [data, setData] = useState("Test");
+  const getChckeboxValue = (event) =>{
+     const checkValue = event.target.value;
+     setData(event.target.value)
+  }
+
+
     return (
       <footer className="main_footer">
         <div className="container-fluid">

@@ -191,6 +191,11 @@ button, input, optgroup, select, textarea {
   background-repeat: no-repeat;
   background-position: 93% 87%;
   background-size: 21rem;
+  margin-top: -1px;
+}
+
+.booking-wrapper .calendar-container {
+  padding-bottom: 30px;
 }
 
 .booking-wrapper .row {
@@ -215,6 +220,10 @@ button, input, optgroup, select, textarea {
   height: 85vh;
   overflow-x: hidden;
   overflow-y: auto;
+}
+
+.booking-wrapper .booking-box.box2 {
+  height: auto;
 }
 
 .booking-wrapper .booking-box.calendar_wrapper .box-header {
@@ -482,7 +491,7 @@ button, input, optgroup, select, textarea {
 }
 
 .booking-wrapper .booking_form > .wrapper {
-  padding: 2.5rem 0 2.5rem 2.5rem;
+  padding: 2.5rem 0 50px 2.5rem;
   height: 100%;
 }
 
@@ -664,6 +673,27 @@ button, input, optgroup, select, textarea {
   color: #fff;
 }
 
+@media only screen and (min-width: 1025px) and (max-width: 1200px) {
+  body, .btn {
+    font-size: 1.75rem;
+  }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1024px) {
+  body, .btn {
+    font-size: 1.25rem !important;
+  }
+  .booking-wrapper .form_side, .booking-wrapper .caption_side {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+    max-width: 100%;
+  }
+  .booking-wrapper .box3 {
+    margin-top: -45rem !important;
+  }
+}
+
 @media only screen and (min-width: 1024px) and (max-height: 700px) {
   .bookingForm textarea {
     height: 6rem;
@@ -690,8 +720,8 @@ button, input, optgroup, select, textarea {
     max-height: 12rem;
   }
   .booking-wrapper {
-    background-position: 95% 29%;
     padding-top: 3rem;
+    background-image: none;
   }
   .single_reviews .inner {
     padding: 4rem 2rem 12rem;
@@ -707,18 +737,34 @@ button, input, optgroup, select, textarea {
   .cta {
     padding: 5rem;
   }
-  .booking-wrapper .row {
+  .booking-wrapper > div > .row {
     -webkit-box-orient: vertical;
     -webkit-box-direction: reverse;
         -ms-flex-direction: column-reverse;
             flex-direction: column-reverse;
   }
   .booking-wrapper .intro_text {
-    margin: 1rem 0 4rem;
+    padding: 1rem 0 8rem;
+    background: url(./images/banner-img.svg) 80% 90% no-repeat;
+    background-size: 200px;
+    margin-top: -40px;
   }
   .booking-wrapper .booking-box {
-    max-width: 80%;
-    height: 60vh;
+    max-width: 100%;
+    min-height: 70vh;
+    height: auto;
+  }
+  .booking-wrapper .booking-box.box2 {
+    min-height: auto;
+  }
+  .booking-wrapper .box3 {
+    position: relative;
+    width: 84%;
+    margin-top: -48rem;
+    border-bottom-left-radius: 1.875rem;
+  }
+  .booking-wrapper .box3 img {
+    max-height: 18vw;
   }
 }
 
@@ -914,7 +960,7 @@ button, input, optgroup, select, textarea {
             flex-direction: column-reverse;
   }
   .booking-wrapper .calendar_wrapper .calendar-container {
-    padding-bottom: 30px;
+    padding-bottom: 20px;
   }
   .booking-wrapper .calendar_wrapper .box-body {
     opacity: 1;
@@ -952,8 +998,8 @@ button, input, optgroup, select, textarea {
   .booking-wrapper .intro_text {
     margin-top: 0rem;
     padding-bottom: 110px;
-    background: url(./images/banner-img.svg) 95% 90% no-repeat;
-    background-size: 55%;
+    background: url(./images/banner-img.svg) 100% 85% no-repeat;
+    background-size: 200px;
   }
   .booking-wrapper .intro_text .title {
     font-size: 50px;
@@ -1001,7 +1047,7 @@ button, input, optgroup, select, textarea {
   }
   .booking-wrapper .booking_form {
     width: 100%;
-    margin-top: -556px;
+    margin-top: -570px;
     position: relative;
     border-bottom-left-radius: 1.875rem;
   }
@@ -1061,7 +1107,7 @@ button, input, optgroup, select, textarea {
     text-align: left;
   }
   .booking-wrapper .d-flex.flex-column > div img {
-    max-width: 40vw;
+    max-width: 160px;
   }
 }
 /*# sourceMappingURL=main.css.map */
