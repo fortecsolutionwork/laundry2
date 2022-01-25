@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/laundry2/static/css/main.cde739c9.chunk.css",
-    "main.js": "/laundry2/static/js/main.107de977.chunk.js",
-    "main.js.map": "/laundry2/static/js/main.107de977.chunk.js.map",
+    "main.css": "/laundry2/static/css/main.25506763.chunk.css",
+    "main.js": "/laundry2/static/js/main.44fdc48c.chunk.js",
+    "main.js.map": "/laundry2/static/js/main.44fdc48c.chunk.js.map",
     "runtime-main.js": "/laundry2/static/js/runtime-main.356e8477.js",
     "runtime-main.js.map": "/laundry2/static/js/runtime-main.356e8477.js.map",
     "static/css/2.b3e935b7.chunk.css": "/laundry2/static/css/2.b3e935b7.chunk.css",
@@ -12,7 +12,7 @@
     "static/js/3.b2917b4c.chunk.js.map": "/laundry2/static/js/3.b2917b4c.chunk.js.map",
     "index.html": "/laundry2/index.html",
     "static/css/2.b3e935b7.chunk.css.map": "/laundry2/static/css/2.b3e935b7.chunk.css.map",
-    "static/css/main.cde739c9.chunk.css.map": "/laundry2/static/css/main.cde739c9.chunk.css.map",
+    "static/css/main.25506763.chunk.css.map": "/laundry2/static/css/main.25506763.chunk.css.map",
     "static/js/2.d120c514.chunk.js.LICENSE.txt": "/laundry2/static/js/2.d120c514.chunk.js.LICENSE.txt",
     "static/media/main.css": "/laundry2/static/media/banner-img.f784ebd4.svg",
     "static/media/Facebook.f4a70f12.svg": "/laundry2/static/media/Facebook.f4a70f12.svg",
@@ -30,7 +30,7 @@
     "static/js/runtime-main.356e8477.js",
     "static/css/2.b3e935b7.chunk.css",
     "static/js/2.d120c514.chunk.js",
-    "static/css/main.cde739c9.chunk.css",
-    "static/js/main.107de977.chunk.js"
+    "static/css/main.25506763.chunk.css",
+    "static/js/main.44fdc48c.chunk.js"
   ]
 }
