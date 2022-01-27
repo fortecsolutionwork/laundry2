@@ -147,7 +147,7 @@ function Home() {
                                 <h2 className="title">We got you!</h2>
                                 <p>We pick up your dirty laundry and bring it back to you clean, folded and sorted, all on the same day.</p>
                                 <p>Still got questions?</p>
-                                <a href="" className="btn btn-white">Call us</a>
+                                <a href="tel:(416) 984-4659" className="btn btn-white">Call us</a>
                             </div>
                         </div>
                     </div>
@@ -181,7 +181,7 @@ function Home() {
             <div className="container-fluid cta_wrapper">
                 <div className="cta">
                     <h2 class="section_title">Have <br />Questions?</h2>
-                    <a href="" className="btn btn-white">Call us</a>
+                    <a href="tel:(416) 984-4659" className="btn btn-white">Call us</a>
                 </div>
             </div>
 
