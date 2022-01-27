@@ -50,8 +50,23 @@ function Home() {
     $(document).on('click', '.react-calendar__tile', function () {
         $('.selected-location').addClass('active');
         $('.box3').show();
+        $('.date_selected').show();
     });
 
+    $(document).on('click', '.current-location', function () {
+        $('.box2').hide();
+        $('.box3').hide();
+        $('.box1').show();
+    });
+    
+    $(document).on('click', '.date_selected', function () {
+        $(this).hide();
+        $('.selected-location').removeClass('active');
+        $('.box3').hide();
+        $('.box2').show();
+    });
+    
+    // .current-location
 
 
     return (
@@ -94,7 +109,7 @@ function Home() {
                                 </div>
                                 <div className="calendar_wrapper booking-box box2">
                                     <div className="box-header">
-                                        <div className="selected-location mb-3"><div>Toronto Western Hospital <br /><span className='selected'>{`${month}: ${day}`}</span></div></div>
+                                        <div className="selected-location mb-3"><div> <span className='current-location'>Toronto Western Hospital</span> <br /><span className='selected date_selected'>{`${month}: ${day}`}</span></div></div>
                                         <h1><span className='selectedTime'>Select the dates</span></h1>
                                     </div>
                                     <div className="box-body">
