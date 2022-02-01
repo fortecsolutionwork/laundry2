@@ -442,30 +442,31 @@ color: #000;
 
         .box-body {
             padding: 2.5vh 2.5rem 3vh 2.5rem; 
-        }
-        .input-box {
-            position: relative;
-            
             input {
-            background: #222222;
-            box-shadow: none;
-            outline: none;
-            border: none;
-            width: 100%;
-            height: 4rem;
-            border-radius: 2rem;
-            padding: 1rem 2.5rem;
-            color: #fff;
-            font-weight: 500;
-        }
-        svg {
+              background: #222222;
+              box-shadow: none;
+              outline: none;
+              border: none;
+              width: 100%;
+              height: 4rem;
+              border-radius: 2rem;
+              padding: 1rem 2.5rem;
+              color: #fff;
+              font-weight: 500;
+          }
+          svg {
             position: absolute;
             right: 2rem;
-            top: 50%;
+            top: 8px;
             max-width: 1.9rem;
             color: #8f8f8f;
-            transform: translateY(-50%);
         }
+        }
+        .App__input{
+            position: relative;
+            
+            
+       
     }
     }
 
@@ -1184,4 +1185,40 @@ img {
     }
 }
    }
+}
+
+// new css for input form
+
+.autocomplete-dropdown-container {
+  background: #222;
+  margin-top: 20px;
+  border-radius: 20px;
+  padding: 0;
+}
+.booking-wrapper .booking-box .box-body input.focus-visible[aria-expanded="true"] + .autocomplete-dropdown-container{
+  padding: 20px 15px;
+}
+.booking-wrapper .booking-box  .location-img{
+  -webkit-filter:  invert(1);
+    filter:  invert(1);
+
+}
+.booking-wrapper .booking-box  .location-img-wrapper{
+  min-width: 30px;
+  display: inline-block;
+}
+.autocomplete-dropdown-container > div{
+  padding: 20px;
+  border-radius: 15px;
+}
+
+.autocomplete-dropdown-container > div:hover{
+  background-color: #fff;
+  color: #000;
+}
+.autocomplete-dropdown-container > div:hover  .location-img{
+  filter: none;
+}
+span.error-message {
+  color: #eb4e4e;
 }

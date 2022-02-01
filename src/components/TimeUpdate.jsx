@@ -10,7 +10,9 @@ class Demo extends Component {
     }
 
     onChangeValue(event) {
+        alert("hiii");
         console.log(event.target.value);
+        console.log("event.target.value");
     }
 
     render() {

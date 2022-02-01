@@ -422,11 +422,7 @@ button, input, optgroup, select, textarea {
   padding: 2.5vh 2.5rem 3vh 2.5rem;
 }
 
-.booking-wrapper .booking-box .input-box {
-  position: relative;
-}
-
-.booking-wrapper .booking-box .input-box input {
+.booking-wrapper .booking-box .box-body input {
   background: #222222;
   -webkit-box-shadow: none;
           box-shadow: none;
@@ -440,14 +436,16 @@ button, input, optgroup, select, textarea {
   font-weight: 500;
 }
 
-.booking-wrapper .booking-box .input-box svg {
+.booking-wrapper .booking-box .box-body svg {
   position: absolute;
   right: 2rem;
-  top: 50%;
+  top: 8px;
   max-width: 1.9rem;
   color: #8f8f8f;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+}
+
+.booking-wrapper .booking-box .App__input {
+  position: relative;
 }
 
 .booking-wrapper .intro_text {
@@ -1109,5 +1107,45 @@ button, input, optgroup, select, textarea {
   .booking-wrapper .d-flex.flex-column > div img {
     max-width: 160px;
   }
+}
+
+.autocomplete-dropdown-container {
+  background: #222;
+  margin-top: 20px;
+  border-radius: 20px;
+  padding: 0;
+}
+
+.booking-wrapper .booking-box .box-body input.focus-visible[aria-expanded="true"] + .autocomplete-dropdown-container {
+  padding: 20px 15px;
+}
+
+.booking-wrapper .booking-box .location-img {
+  -webkit-filter: invert(1);
+  filter: invert(1);
+}
+
+.booking-wrapper .booking-box .location-img-wrapper {
+  min-width: 30px;
+  display: inline-block;
+}
+
+.autocomplete-dropdown-container > div {
+  padding: 20px;
+  border-radius: 15px;
+}
+
+.autocomplete-dropdown-container > div:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+.autocomplete-dropdown-container > div:hover .location-img {
+  -webkit-filter: none;
+          filter: none;
+}
+
+span.error-message {
+  color: #eb4e4e;
 }
 /*# sourceMappingURL=main.css.map */

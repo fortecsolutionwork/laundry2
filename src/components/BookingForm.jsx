@@ -1,6 +1,7 @@
 import React,{useState} from 'react';
 
 function BookingForm() {
+
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [phone, setPhone] = useState("");
@@ -8,16 +9,47 @@ function BookingForm() {
 
 
     function handleSubmit(event) {
-       event.preventDefault();
+        console.log(name +  email + phone +  message);
+        var Acuity = require('acuityscheduling');
+         
+            var acuity = Acuity.basic({
+            userId: 24874570,
+            apiKey: 'e3211301c69dd972450c5579e687c8d1'
+            });
+        var options = {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json'},
+            body: {
+                appointmentTypeID : 1,
+                datetime          : '2022-02-02T09:00',
+                firstName         : 'Bob',
+                lastName          : 'McTest',
+                email             : 'bob.mctest@example.com'
+            }
+            };
+            let apt;
+            // res.send("appointments IS WORKING!!!")
+            apt = acuity.request('/appointments',options,function (err, response, appointments) {
+
+              if (err) return console.error(err);
+              apt = appointments;
+              console.log(appointments)
+              response.send(appointments);
+            });
+            console.log(apt);
+            // res.send(apt);
+
+         event.preventDefault();
+     
     }
-    console.log(name)
+   
     return (
         <>
-            <form className="form bookingForm mt-4">
+            <form onSubmit={handleSubmit} className="form bookingForm mt-4">
 
                      <div className="form-group">
                     <label for="Name">Name</label>
-                    <input
+                    <input required
                         type="text"
                         name="Name"
                         className="Name"
@@ -28,7 +60,7 @@ function BookingForm() {
                     </div>
                     <div className="form-group">
                     <label for="email">Email</label>
-                    <input
+                    <input required
                         name="email"
                         id="email"
                         className="email"
@@ -40,7 +72,7 @@ function BookingForm() {
                     </div>
                     <div className="form-group">
                 <label for="Phone">Phone no.</label>
-                <input
+                <input required
                     type="text"
                     name="Phone"
                     className="Phone"
@@ -51,7 +83,7 @@ function BookingForm() {
                 </div>
                 <div className="form-group">
                 <label for="message">Notes</label>
-                <textarea
+                <textarea 
                     className="message"
                     name="message"
                     value={message}

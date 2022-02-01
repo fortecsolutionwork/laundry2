@@ -1,5 +1,5 @@
 import React from 'react';
-import FeatureImg from "../images/feature1.png";
+
 
 function Card(props){
     return (
