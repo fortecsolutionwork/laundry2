@@ -1,45 +1,81 @@
 import React,{useState} from 'react';
-
+import { Modal, Button } from "react-bootstrap";
+import { $ } from 'react-jquery-plugin';
 function BookingForm() {
 
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [phone, setPhone] = useState("");
     const [message, setMessage] = useState("");
-
+    const [showModal, setShow] = useState(false);
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+    const [mess, setMess] = useState("");
+  function handleClosebook(){
+   setShow(false);
+   $('.box1').show();
+   $('.box3').hide();
+   $('.box2').hide();
+   localStorage.clear();
+  }
 
     function handleSubmit(event) {
-        console.log(name +  email + phone +  message);
-        var Acuity = require('acuityscheduling');
-         
-            var acuity = Acuity.basic({
-            userId: 24874570,
-            apiKey: 'e3211301c69dd972450c5579e687c8d1'
-            });
-        var options = {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json'},
-            body: {
-                appointmentTypeID : 1,
-                datetime          : '2022-02-02T09:00',
-                firstName         : 'Bob',
-                lastName          : 'McTest',
-                email             : 'bob.mctest@example.com'
+        event.preventDefault();
+       // console.log(name +  email + phone +  message);
+       var month  = localStorage.getItem('month').toLowerCase();
+       var numberofcloth  = localStorage.getItem('numberofcloth');
+       var day = localStorage.getItem('day');
+       var year  = new Date().getFullYear()
+       var newAddress = localStorage.getItem('newAddress');
+       var time = localStorage.getItem('time');
+        var fullm;
+        const montharar = {jan: 1, feb: 2, mar: 3, apr: 4, may: 5, jun: 6, jul: 7, aug: 8, sep: 9, oct: 10, nov: 11, dec:12};
+        for (const [key, value] of Object.entries(montharar)) {
+            console.log(key, value);
+            if(month ==  key){
+                fullm =  value
             }
-            };
-            let apt;
-            // res.send("appointments IS WORKING!!!")
-            apt = acuity.request('/appointments',options,function (err, response, appointments) {
+          }
+          function getTimeZone() {
+            var offset = new Date().getTimezoneOffset(),
+                o = Math.abs(offset);
+            return (offset < 0 ? "+" : "-") + ("00" + Math.floor(o / 60)).slice(-2) + ":" + ("00" + (o % 60)).slice(-2);
+        }
 
-              if (err) return console.error(err);
-              apt = appointments;
-              console.log(appointments)
-              response.send(appointments);
-            });
-            console.log(apt);
-            // res.send(apt);
+       var bookingdate = year+"-"+fullm+"-"+day+"T"+time.split(" ")[0]+getTimeZone();
+       //alert(bookingdate);
+      //var bookingdate =  "2022-2-8T11:30:00+0530";
+        var axios = require('axios');
+        var FormData = require('form-data');
+        var data = new FormData();
+        data.append('datetime', bookingdate);
+        data.append('firstName', name);
+        data.append('lastName', name);
+        data.append('phone', phone);
+        data.append('quantity', numberofcloth);
+        data.append('notes', message);
+        data.append('email', email);
+        data.append('location', newAddress);
 
-         event.preventDefault();
+        var config = {
+        method: 'post',
+        url: 'https://fortecsalesforce.com/laundary/book.php',
+        data : data
+        };
+
+        axios(config)
+        .then(function (response) {
+            setShow(true)
+            localStorage.setItem('remessage',JSON.stringify(response.data));
+            setMess(JSON.stringify(response.data));
+           //console.log(JSON.stringify(response.data)); 
+
+        })
+        .catch(function (error) {
+        console.log(error);
+        });
+
+         
      
     }
    
@@ -92,6 +128,20 @@ function BookingForm() {
                 </div>
                 <button type="submit" className="send btn w-100 btn_white">Book</button>
             </form>
+      <Modal  className="output__modal" show={showModal} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Laundaryforclinics</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>{mess}</Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+          <Button variant="primary" onClick={handleClosebook}>
+            Book Again
+          </Button>
+        </Modal.Footer>
+      </Modal>
         </>
     )
 }

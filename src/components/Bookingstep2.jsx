@@ -47,7 +47,8 @@ function Bookingstep2() {
     // const [time, setTime] = useState("hello");
     var month = date.toLocaleString('default', { month: 'short' });
     var day = date.getUTCDate() + 1;
-    console.log("localStorage.getItem(newAddress)");
+    localStorage.setItem('day', `${day}`);
+    localStorage.setItem('month', `${month}`);
     // console.log(`${month}: ${day}`);
     function Search() {
         return (
@@ -67,7 +68,7 @@ function Bookingstep2() {
         <>
             <div className="calendar_wrapper booking-box box2">
                 <div className="box-header">
-                    <div className="selected-location mb-3"><div> <span className='current-location'></span> <br /><span className='selected date_selected'>{`${month}: ${day}`}</span></div></div>
+                    <div className="selected-location mb-3"><div> <span className='current-location'></span> <span className='selected date_selected'>{`${month}: ${day}`}</span></div></div>
                     <h1><span className='selectedTime'>Select the dates</span></h1>
                 </div>
                 <div className="box-body">

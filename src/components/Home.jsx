@@ -8,10 +8,7 @@ import Bookingstep2 from './Bookingstep2';
 import Bookingstep3 from './Bookingstep3';
 import { $ } from 'react-jquery-plugin';
 
-
-
 function Home() {
-
     $(document).on('click', '.times_options2 input[type="radio"]', function () {
         var radio_value = $(this).val();
         // alert(radio_value);

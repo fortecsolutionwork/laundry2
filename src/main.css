@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*
 @font-face {
   font-family: 'Didot';
@@ -217,13 +218,20 @@ button, input, optgroup, select, textarea {
 .booking-wrapper .booking-box {
   background: #2f2f2f;
   border-radius: 1.5rem;
-  height: 85vh;
+  min-height: 85vh;
   overflow-x: hidden;
   overflow-y: auto;
 }
 
 .booking-wrapper .booking-box.box2 {
   height: auto;
+}
+
+.booking-wrapper .booking-box.box2 .current-location {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
 }
 
 .booking-wrapper .booking-box.calendar_wrapper .box-header {
@@ -362,7 +370,7 @@ button, input, optgroup, select, textarea {
 @media only screen and (min-width: 1024px) and (max-height: 700px) {
   .booking-wrapper .booking-box.calendar_wrapper .react-calendar .react-calendar__viewContainer {
     padding: 1rem 1rem;
-    margin-top: 1.5rem;
+    margin-top: -.5rem;
   }
 }
 
@@ -531,6 +539,24 @@ button, input, optgroup, select, textarea {
 
 .booking-wrapper .box3 img {
   max-height: 25vh;
+}
+
+@media only screen and (min-width: 1024px) and (max-height: 700px) {
+  .booking-wrapper .calendar-container {
+    padding-bottom: 0px;
+  }
+  .selectedTime {
+    margin-top: -1vh;
+    margin-bottom: -1vh;
+    display: block;
+  }
+  form.bookingForm {
+    max-height: 55vh;
+    overflow-y: auto;
+  }
+  form.bookingForm::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 .section_title {
@@ -1114,10 +1140,8 @@ button, input, optgroup, select, textarea {
   margin-top: 20px;
   border-radius: 20px;
   padding: 0;
-}
-
-.booking-wrapper .booking-box .box-body input.focus-visible[aria-expanded="true"] + .autocomplete-dropdown-container {
-  padding: 20px 15px;
+  max-height: 45vh;
+  overflow-y: auto;
 }
 
 .booking-wrapper .booking-box .location-img {
@@ -1131,8 +1155,9 @@ button, input, optgroup, select, textarea {
 }
 
 .autocomplete-dropdown-container > div {
-  padding: 20px;
+  padding: 2rem 1.5rem;
   border-radius: 15px;
+  font-size: 1.5rem;
 }
 
 .autocomplete-dropdown-container > div:hover {
@@ -1145,7 +1170,70 @@ button, input, optgroup, select, textarea {
           filter: none;
 }
 
+.autocomplete-dropdown-container .location-img {
+  max-width: 3rem;
+}
+
 span.error-message {
   color: #eb4e4e;
+}
+
+.output__modal button.btn-close {
+  width: 50px;
+  border: none;
+  height: 50px;
+  max-width: 50px;
+  position: relative;
+  background: transparent;
+}
+
+.output__modal button.btn-close:before {
+  content: '✖';
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 50px;
+  height: 50px;
+  z-index: 9999;
+}
+
+.output__modal .modal-header {
+  padding-bottom: 0;
+}
+
+.output__modal .modal-footer {
+  border-top: none;
+}
+
+.output__modal .modal-content {
+  border: none !important;
+}
+
+.output__modal button.btn.btn-secondary {
+  background: #6f6f6f;
+  border-color: #6f6f6f;
+  font-size: 15px;
+  padding: 8px 20px;
+}
+
+.output__modal button.btn.btn-primary {
+  padding: 8px 20px;
+  font-size: 15px;
+  background: #222;
+  border-color: #222;
+}
+
+.output__modal .modal-body {
+  font-size: 18px;
+  padding-top: 30px;
+  padding-bottom: 40px;
+  text-align: center;
+}
+
+.fade.output__modal.modal.show {
+  min-height: 100vh;
+  display: -ms-grid !important;
+  display: grid !important;
+  place-items: center;
 }
 /*# sourceMappingURL=main.css.map */
