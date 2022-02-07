@@ -1271,16 +1271,19 @@ span.error-message {
   width: 50px;
   height: 50px;
   z-index: 9999;
+  color: #fff;
 }
 
 .output__modal .modal-header {
-  padding-bottom: 0;
+ border-bottom: none;
 }
 .output__modal .modal-footer {
   border-top: none;
+  padding-bottom: 30px;
 }
 .output__modal .modal-content {
   border: none !important;
+  background-color: #111;
 }
 
 .output__modal button.btn.btn-secondary {
@@ -1293,18 +1296,40 @@ span.error-message {
 .output__modal button.btn.btn-primary {
   padding: 8px 20px;
   font-size: 15px;
-  background: #222;
-  border-color: #222;
+  background: #fff;
+  border-color: #fff;
+  color: #000;
 }
 .output__modal .modal-body {
   font-size: 18px;
   padding-top: 30px;
   padding-bottom: 40px;
   text-align: center;
+  color: #fff;
+  max-width: 75%;
+  margin: 0 auto;
 }
 
 .fade.output__modal.modal.show {
   min-height: 100vh;
   display: grid !important;
   place-items: center;
+}
+
+.output__modal .modal-header img {
+  display: block;
+  margin: 40px auto !important;
+}
+
+.output__modal .modal-header .modal-title {
+  width: 100%;
+}
+
+// second_modal
+.second_modal .modal-content,.second_modal .modal-body {
+  border: none !important;
+  background-color: transparent;
+}
+.second_modal .feature-img {
+  max-width: 50px;
 }

@@ -1,6 +1,8 @@
 import React,{useState} from 'react';
 import { Modal, Button } from "react-bootstrap";
 import { $ } from 'react-jquery-plugin';
+import Dark_logo from '../images/logo-dark-bg.svg';
+import loading_Img from '../images/caution.png';
 function BookingForm() {
 
     const [name, setName] = useState("");
@@ -8,20 +10,24 @@ function BookingForm() {
     const [phone, setPhone] = useState("");
     const [message, setMessage] = useState("");
     const [showModal, setShow] = useState(false);
+    const [showModalp, setShowp] = useState(false);
     const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
+    const handleShow = () => setShow(true);         
     const [mess, setMess] = useState("");
+   
   function handleClosebook(){
    setShow(false);
    $('.box1').show();
    $('.box3').hide();
    $('.box2').hide();
    localStorage.clear();
+   window.location.reload();
   }
 
     function handleSubmit(event) {
         event.preventDefault();
        // console.log(name +  email + phone +  message);
+       setShowp(true);
        var month  = localStorage.getItem('month').toLowerCase();
        var numberofcloth  = localStorage.getItem('numberofcloth');
        var day = localStorage.getItem('day');
@@ -42,7 +48,7 @@ function BookingForm() {
             return (offset < 0 ? "+" : "-") + ("00" + Math.floor(o / 60)).slice(-2) + ":" + ("00" + (o % 60)).slice(-2);
         }
 
-       var bookingdate = year+"-"+fullm+"-"+day+"T"+time.split(" ")[0]+getTimeZone();
+       var bookingdate = year+"-"+fullm+"-"+day+"T"+time.split(" ")[0]+":00-0500";
        //alert(bookingdate);
       //var bookingdate =  "2022-2-8T11:30:00+0530";
         var axios = require('axios');
@@ -66,6 +72,7 @@ function BookingForm() {
         axios(config)
         .then(function (response) {
             setShow(true)
+            setShowp(false);
             localStorage.setItem('remessage',JSON.stringify(response.data));
             setMess(JSON.stringify(response.data));
            //console.log(JSON.stringify(response.data)); 
@@ -130,7 +137,7 @@ function BookingForm() {
             </form>
       <Modal  className="output__modal" show={showModal} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Laundaryforclinics</Modal.Title>
+          <Modal.Title><img src={Dark_logo} /></Modal.Title>
         </Modal.Header>
         <Modal.Body>{mess}</Modal.Body>
         <Modal.Footer>
@@ -141,6 +148,13 @@ function BookingForm() {
             Book Again
           </Button>
         </Modal.Footer>
+      </Modal>
+      <Modal  className="output__modal second_modal" show={showModalp}>
+        <Modal.Body>
+          <img className='feature-img' src={loading_Img} />
+          Processing...
+        </Modal.Body>
+
       </Modal>
         </>
     )
