@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/laundry2/static/css/main.abf317cc.chunk.css",
+    "main.css": "/laundry2/static/css/main.2bde98f5.chunk.css",
     "main.js": "/laundry2/static/js/main.a09a0b23.chunk.js",
     "main.js.map": "/laundry2/static/js/main.a09a0b23.chunk.js.map",
     "runtime-main.js": "/laundry2/static/js/runtime-main.e29d67b6.js",
@@ -12,7 +12,7 @@
     "static/js/3.bab2f040.chunk.js.map": "/laundry2/static/js/3.bab2f040.chunk.js.map",
     "index.html": "/laundry2/index.html",
     "static/css/2.b3e935b7.chunk.css.map": "/laundry2/static/css/2.b3e935b7.chunk.css.map",
-    "static/css/main.abf317cc.chunk.css.map": "/laundry2/static/css/main.abf317cc.chunk.css.map",
+    "static/css/main.2bde98f5.chunk.css.map": "/laundry2/static/css/main.2bde98f5.chunk.css.map",
     "static/js/2.261697da.chunk.js.LICENSE.txt": "/laundry2/static/js/2.261697da.chunk.js.LICENSE.txt",
     "static/media/main.css": "/laundry2/static/media/banner-img.f784ebd4.svg",
     "static/media/Facebook.f4a70f12.svg": "/laundry2/static/media/Facebook.f4a70f12.svg",
@@ -30,7 +30,7 @@
     "static/js/runtime-main.e29d67b6.js",
     "static/css/2.b3e935b7.chunk.css",
     "static/js/2.261697da.chunk.js",
-    "static/css/main.abf317cc.chunk.css",
+    "static/css/main.2bde98f5.chunk.css",
     "static/js/main.a09a0b23.chunk.js"
   ]
 }

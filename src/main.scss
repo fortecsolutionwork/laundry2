@@ -1335,9 +1335,23 @@ span.error-message {
 }
 
 
+
 // media quaries
+
 @media (min-width:1440px){
   .booking-wrapper .booking-box .box-body svg {
     top: 17px;
+  }
 }
+
+@media (max-width:1024px) and (min-width:768px){
+  .booking-wrapper .booking-box .box-body svg {
+    top: 17px;
+  }
+}
+
+@media (max-width:767px){
+  .booking-wrapper .booking-box .box-body svg {
+    top: 17px;
+  }
 }
