@@ -1268,9 +1268,9 @@ span.error-message {
   }
 }
 
-@media (max-width: 1024px) and (min-width: 768px) {
+@media (max-width: 1000px) and (min-width: 767px) {
   .booking-wrapper .booking-box .box-body svg {
-    top: 17px;
+    top: 8px;
   }
 }
 
