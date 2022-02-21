@@ -1261,4 +1261,10 @@ span.error-message {
 .second_modal .feature-img {
   max-width: 50px;
 }
+
+@media (min-width: 1440px) {
+  .booking-wrapper .booking-box .box-body svg {
+    top: 17px;
+  }
+}
 /*# sourceMappingURL=main.css.map */
