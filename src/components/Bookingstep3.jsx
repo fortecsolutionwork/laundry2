@@ -4,7 +4,7 @@ import Banner_img3 from '../images/plant2.svg';
 import BookingForm from './BookingForm';
 
 function Bookingstep3() {
-    const [tripType, setTripType] = useState("8:00 AM");
+    const [tripType, setTripType] = useState("9:00 AM");
     localStorage.setItem('time', tripType);
     return (
         <>

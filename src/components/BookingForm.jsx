@@ -47,10 +47,11 @@ function BookingForm() {
                 o = Math.abs(offset);
             return (offset < 0 ? "+" : "-") + ("00" + Math.floor(o / 60)).slice(-2) + ":" + ("00" + (o % 60)).slice(-2);
         }
-
-       var bookingdate = year+"-"+fullm+"-"+day+"T"+time.split(" ")[0]+":00-0500";
-       //alert(bookingdate);
-      //var bookingdate =  "2022-2-8T11:30:00+0530";
+       
+        $('.rmdp-selected .sd ').each(function(index,item){
+       var bookingdate = year+"-"+fullm+"-"+$(item).html()+"T"+time.split(" ")[0]+":00-0500";
+       alert(bookingdate);
+      
         var axios = require('axios');
         var FormData = require('form-data');
         var data = new FormData();
@@ -82,7 +83,7 @@ function BookingForm() {
         console.log(error);
         });
 
-         
+      }); 
      
     }
    

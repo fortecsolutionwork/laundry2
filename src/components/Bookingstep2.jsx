@@ -1,6 +1,7 @@
 import React,{useState}from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Calendar from 'react-calendar';
+import { Calendar } from "react-multi-date-picker"
+
 import 'react-calendar/dist/Calendar.css';
 const list = [
     {
@@ -45,6 +46,12 @@ function Bookingstep2() {
   localStorage.setItem('numberofcloth', tripType);
     const [date, setDate] = useState(new Date());
     // const [time, setTime] = useState("hello");
+    var today = new Date();
+    var dd = String(today.getDate()).padStart(2, '0');
+    var y =String(today.getDate()).padStart(2, '0');
+    var m = String(today.getMonth() + 1).padStart(2, '0');
+    var daysInMonth = new Date(y,m,1,-1).getDate();
+ 
     var month = date.toLocaleString('default', { month: 'short' });
     var day = date.getUTCDate() + 1;
     localStorage.setItem('day', `${day}`);
@@ -53,8 +60,13 @@ function Bookingstep2() {
     function Search() {
         return (
             <div className='app'>
-                <div className='calendar-container'>
-                    <Calendar onChange={setDate} value={date} />
+                <div className='calendar-container' id='booking-calendar'>
+                   { /* <Calendar onChange={setDate} value={date} /> */}
+                   <Calendar multiple minDate={new Date().setDate(dd)}/>
+                 </div>
+                <div class="row bottom_btns">
+                   <div class="col-6"><button type="button" class="btn previous">Back</button></div>
+                   <div class="col-6"><button type="button" class="btn next">Next</button></div>
                 </div>
                 {/* <p className='text-center'>
                 <span className='bold'>Selected Date:</span>{' '}
@@ -72,14 +84,14 @@ function Bookingstep2() {
                     <h1><span className='selectedTime'>Select the dates</span></h1>
                 </div>
                 <div className="box-body">
-                    <p>How many times? &nbsp;<small><FontAwesomeIcon icon={['fas', 'info-circle']} /></small></p>
-                    <ul className='list-inline d-flex justify-content-between times_options'>
+                    <p className='tip'><strong>Tip!</strong><br/>Get a cheaper rate on booking for 5 or more days.</p>
+                    {/* <ul className='list-inline d-flex justify-content-between times_options'>
                     {list.map((item) => (
                         <li className='list-inline-item' onClick={() => {
                           setTripType(item.name);
                       }} key={item.id}><label><input type="radio" value={tripType}   checked={tripType == item.name} name="times" /><span>{item.name}</span></label></li>
                     ))}                 
-                    </ul>
+                    </ul> */}
 
                     <Search defaultValue={''} />
                 </div>

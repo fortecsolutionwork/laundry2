@@ -2,10 +2,7 @@ import React from "react";
 import ImgLocation from '../images/location.png';
 import { $ } from 'react-jquery-plugin';
 import {
-	GoogleMap,
 	LoadScript,
-	Marker,
-	InfoWindow,
 } from "@react-google-maps/api";
 import PlacesAutocomplete, {
 	geocodeByAddress,
@@ -13,11 +10,6 @@ import PlacesAutocomplete, {
 } from "react-places-autocomplete";
 
 import Geocode from "react-geocode";
-
-const mapStyles = {
-	height: "100vh",
-	width: "100%",
-};
 
 Geocode.setApiKey('AIzaSyCXTkpYxVyKe1b4YEg2nwlszp1mme595ko');
 Geocode.setLanguage("en");
@@ -54,9 +46,9 @@ class Map extends React.Component {
 	handleSelect = (newAddress) => {
 		let fields = newAddress;
 		let errors = {};
-		 let formIsValid = true;
+	
 		 if (!fields) {
-			let formIsValid = false;
+			
 			errors["newAddress"] = "Field needs filling...";
 			console.log(this.state.errors["newAddress"]);
 		  }else{
@@ -110,14 +102,8 @@ class Map extends React.Component {
 						lat: position.coords.latitude,
 						lng: position.coords.longitude,
 
-					},
-					markers: [
-						{
-							text: "Current Location",
-							lat: position.coords.latitude,
-							lng: position.coords.longitude,
-						},
-					],
+					}
+				
 				});
 
 				this.getAddress();
@@ -180,7 +166,7 @@ class Map extends React.Component {
 													style,
 												})}
 											>
-												<span><div className="location-img-wrapper"><img className="location-img" src={ImgLocation} /></div>{suggestion.description}</span>
+											<span><div className="location-img-wrapper"><img className="location-img" src={ImgLocation} /></div>{suggestion.description}</span>
 												
 											</div>
 										);

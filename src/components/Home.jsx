@@ -20,12 +20,18 @@ function Home() {
 
     });
 
-    $(document).on('click', '.react-calendar__tile', function () {
+    $(document).on('click', '.next', function () {
         $('.selected-location').addClass('active');
         $('.box3').show();
         $('.date_selected').show();
+        $('.bottom_btns').hide();
       
+    });
 
+    $(document).on('click', '.previous', function () {
+        $('.box1').show();
+        $('.box2').hide();
+        $('.box3').hide();
     });
 
     $(document).on('click', '.current-location', function () {
@@ -33,6 +39,7 @@ function Home() {
         $('.box3').hide();
         $('.box1').show();
         localStorage.removeItem('newAddress');
+        $('.bottom_btns').show();
         //alert("sdfsf");
     });
     
@@ -41,6 +48,7 @@ function Home() {
         $('.selected-location').removeClass('active');
         $('.box3').hide();
         $('.box2').show();
+        $('.bottom_btns').show();
     });
     
     // .current-location
