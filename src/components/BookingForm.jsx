@@ -50,8 +50,6 @@ function BookingForm() {
        
         $('.rmdp-selected .sd ').each(function(index,item){
        var bookingdate = year+"-"+fullm+"-"+$(item).html()+"T"+time.split(" ")[0]+":00-0500";
-       alert(bookingdate);
-      
         var axios = require('axios');
         var FormData = require('form-data');
         var data = new FormData();
@@ -76,8 +74,6 @@ function BookingForm() {
             setShowp(false);
             localStorage.setItem('remessage',JSON.stringify(response.data));
             setMess(JSON.stringify(response.data));
-           //console.log(JSON.stringify(response.data)); 
-
         })
         .catch(function (error) {
         console.log(error);
