@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/laundry2/static/css/main.343ff20b.chunk.css",
-    "main.js": "/laundry2/static/js/main.911d30f5.chunk.js",
-    "main.js.map": "/laundry2/static/js/main.911d30f5.chunk.js.map",
-    "runtime-main.js": "/laundry2/static/js/runtime-main.49f9c598.js",
-    "runtime-main.js.map": "/laundry2/static/js/runtime-main.49f9c598.js.map",
+    "main.css": "/laundry2/static/css/main.b0c2703f.chunk.css",
+    "main.js": "/laundry2/static/js/main.b599829d.chunk.js",
+    "main.js.map": "/laundry2/static/js/main.b599829d.chunk.js.map",
+    "runtime-main.js": "/laundry2/static/js/runtime-main.6e1a6d53.js",
+    "runtime-main.js.map": "/laundry2/static/js/runtime-main.6e1a6d53.js.map",
     "static/css/2.b3e935b7.chunk.css": "/laundry2/static/css/2.b3e935b7.chunk.css",
-    "static/js/2.15314752.chunk.js": "/laundry2/static/js/2.15314752.chunk.js",
-    "static/js/2.15314752.chunk.js.map": "/laundry2/static/js/2.15314752.chunk.js.map",
-    "static/js/3.1e8cedb8.chunk.js": "/laundry2/static/js/3.1e8cedb8.chunk.js",
-    "static/js/3.1e8cedb8.chunk.js.map": "/laundry2/static/js/3.1e8cedb8.chunk.js.map",
+    "static/js/2.2502bd18.chunk.js": "/laundry2/static/js/2.2502bd18.chunk.js",
+    "static/js/2.2502bd18.chunk.js.map": "/laundry2/static/js/2.2502bd18.chunk.js.map",
+    "static/js/3.5bae7224.chunk.js": "/laundry2/static/js/3.5bae7224.chunk.js",
+    "static/js/3.5bae7224.chunk.js.map": "/laundry2/static/js/3.5bae7224.chunk.js.map",
     "index.html": "/laundry2/index.html",
     "static/css/2.b3e935b7.chunk.css.map": "/laundry2/static/css/2.b3e935b7.chunk.css.map",
-    "static/css/main.343ff20b.chunk.css.map": "/laundry2/static/css/main.343ff20b.chunk.css.map",
-    "static/js/2.15314752.chunk.js.LICENSE.txt": "/laundry2/static/js/2.15314752.chunk.js.LICENSE.txt",
+    "static/css/main.b0c2703f.chunk.css.map": "/laundry2/static/css/main.b0c2703f.chunk.css.map",
+    "static/js/2.2502bd18.chunk.js.LICENSE.txt": "/laundry2/static/js/2.2502bd18.chunk.js.LICENSE.txt",
     "static/media/main.css": "/laundry2/static/media/banner-img.f784ebd4.svg",
     "static/media/Facebook.f4a70f12.svg": "/laundry2/static/media/Facebook.f4a70f12.svg",
     "static/media/arrow.088e64a1.svg": "/laundry2/static/media/arrow.088e64a1.svg",
@@ -36,10 +36,10 @@
     "static/media/visa.c0d02897.svg": "/laundry2/static/media/visa.c0d02897.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.49f9c598.js",
+    "static/js/runtime-main.6e1a6d53.js",
     "static/css/2.b3e935b7.chunk.css",
-    "static/js/2.15314752.chunk.js",
-    "static/css/main.343ff20b.chunk.css",
-    "static/js/main.911d30f5.chunk.js"
+    "static/js/2.2502bd18.chunk.js",
+    "static/css/main.b0c2703f.chunk.css",
+    "static/js/main.b599829d.chunk.js"
   ]
 }
